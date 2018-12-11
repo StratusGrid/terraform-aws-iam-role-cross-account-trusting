@@ -1,5 +1,7 @@
 # terraform-aws-iam-role-cross-account-trusting
-Creates a role that can be assumed by another principal (usually another account, but could be user or role) to act as that role with permissions from the attached policies.
+Creates a role that can be assumed by another principal (usually in another account, but could be user or role) to act as that role with permissions from the attached policies.
+
+### This is the TRUSTING side. You will still need to create a policy on the TRUSTED side that allows users in that account to assume the role
 
 ## Example Usage:
 ```
