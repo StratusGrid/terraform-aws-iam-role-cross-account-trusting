@@ -9,7 +9,7 @@ module "iam_role_cross_account_trusting_admin" {
   source = "StratusGrid/s3-bucket-kops-state/aws"
   version = "1.0.0"
   role_name = "cross-account-role-admin"
-  principal_arns = ["arn:aws:iam::<ACCOUNT_ID>:root"]
+  principal_arns = ["arn:aws:iam::ACCOUNT_ID:root"]
   policy_arns = ["arn:aws:iam::aws:policy/AdministratorAccess"]
   input_tags = "${local.common_tags}"
   require_mfa = false
