@@ -7,7 +7,7 @@ Creates a role that can be assumed by another principal (usually in another acco
 ```
 module "iam_role_cross_account_trusting_admin" {
   source = "StratusGrid/iam-role-cross-account-trusting/aws"
-  version = "1.0.2"
+  version = "1.0.3"
   role_name = "cross-account-role-admin"
   principal_arns = ["arn:aws:iam::ACCOUNT_ID:root"]
   policy_arns = ["arn:aws:iam::aws:policy/AdministratorAccess"]
