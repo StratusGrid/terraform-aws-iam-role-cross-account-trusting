@@ -34,12 +34,5 @@ data "aws_iam_policy_document" "cross_account_assume_role_policy" {
 
     actions = ["sts:AssumeRole"]
 
-    condition {
-      test = "Bool"
-      variable = "aws:MultiFactorAuthPresent"
-      values = [
-        "true"
-      ]
-    }
   }
 }
