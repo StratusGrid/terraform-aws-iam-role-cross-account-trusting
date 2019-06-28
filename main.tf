@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 module "iam_policy_document" {
   source = "./iam-policy-document-abstraction"
   principal_arns = "${var.principal_arns}"
