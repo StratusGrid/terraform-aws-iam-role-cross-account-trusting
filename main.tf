@@ -9,6 +9,7 @@ module "iam_policy_document" {
 resource "aws_iam_role" "cross_account_assume_role" {
   name               = "${var.role_name}"
   assume_role_policy = "${module.iam_policy_document.iam_policy_json}"
+  tags               = "${var.input_tags}"
 }
 
 resource "aws_iam_role_policy_attachment" "cross_account_assume_role" {
