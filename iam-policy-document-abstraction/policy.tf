@@ -1,38 +1,38 @@
 data "aws_iam_policy_document" "cross_account_assume_role_policy_mfa" {
-  count = "${var.require_mfa}"
+  count = var.require_mfa ? 1 : 0
 
   statement {
     effect = "Allow"
 
     principals {
       type        = "AWS"
-      identifiers = ["${var.principal_arns}"]
+      identifiers = var.principal_arns
     }
 
     actions = ["sts:AssumeRole"]
 
     condition {
-      test = "Bool"
+      test     = "Bool"
       variable = "aws:MultiFactorAuthPresent"
       values = [
-        "true"
+        "true",
       ]
     }
   }
 }
 
 data "aws_iam_policy_document" "cross_account_assume_role_policy" {
-  count = "${1 - var.require_mfa}"
-  
+  count = var.require_mfa ? 0 : 1
+
   statement {
     effect = "Allow"
 
     principals {
       type        = "AWS"
-      identifiers = ["${var.principal_arns}"]
+      identifiers = var.principal_arns
     }
 
     actions = ["sts:AssumeRole"]
-
   }
 }
+
