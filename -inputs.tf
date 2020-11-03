@@ -13,6 +13,13 @@ variable "policy_arns" {
   type        = list(string)
 }
 
+variable "max_session_duration" {
+  description = "Max session duration for iam role"
+  type        = string
+  default     = 3600
+}
+
+
 variable "input_tags" {
   description = "Map of tags to apply to resources"
   type        = map(string)
