@@ -1,4 +1,5 @@
 output "iam_policy_json" {
+  description = "Permissions attached to the policy"
   value = join(
     ",",
     concat(
@@ -7,4 +8,3 @@ output "iam_policy_json" {
     ),
   )
 }
-
