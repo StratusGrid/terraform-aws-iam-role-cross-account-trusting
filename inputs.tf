@@ -28,6 +28,6 @@ variable "input_tags" {
 
 variable "require_mfa" {
   description = "Boolean to determine whether the role should require users assuming it to have MFA enabled"
+  type        = bool
   default     = false
 }
-
