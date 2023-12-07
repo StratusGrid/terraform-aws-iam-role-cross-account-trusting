@@ -1,0 +1,33 @@
+version: ""
+
+formatter: markdown table
+
+name: terraform-aws-iam-role-cross-account-trusting
+
+content: |-
+
+  # This is used to return a single document with the appropriate MFA choice
+  ---
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  ---
+sections:
+  show:
+    - resources
+    - inputs
+    - outputs
+    - providers
+    - requirements
+
+sort:
+  enabled: true
+  by: name
+
+output:
+  file: README.md
+  mode: replace
